@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G24b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TechniqueCard" representedClassName="TechniqueCard" syncable="YES" codeGenerationType="class">
+        <attribute name="currentBPM" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="currentExperience" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastHighBPM" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastLowBPM" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="techniqueDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="techniqueName" attributeType="String" syncable="YES"/>
+        <relationship name="timeCompleted" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TimeCompleted" inverseName="techniqueCard" inverseEntity="TimeCompleted" syncable="YES"/>
+    </entity>
+    <entity name="TimeCompleted" representedClassName="TimeCompleted" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeCompleted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="techniqueCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TechniqueCard" inverseName="timeCompleted" inverseEntity="TechniqueCard" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TechniqueCard" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="TimeCompleted" positionX="351" positionY="90" width="128" height="90"/>
+    </elements>
 </model>

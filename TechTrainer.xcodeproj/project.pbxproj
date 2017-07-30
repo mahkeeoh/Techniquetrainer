@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		268C4FD41F2828D3006B88BB /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C4FD31F2828D3006B88BB /* AddCardView.swift */; };
+		26A821B21F1A95DF00C2ACA6 /* TechniqueCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */; };
 		26D6466B1F12B54200BD8BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6466A1F12B54200BD8BD9 /* AppDelegate.swift */; };
-		26D6466D1F12B54200BD8BD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6466C1F12B54200BD8BD9 /* ViewController.swift */; };
 		26D646701F12B54200BD8BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D6466E1F12B54200BD8BD9 /* Main.storyboard */; };
 		26D646731F12B54200BD8BD9 /* TechTrainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D646711F12B54200BD8BD9 /* TechTrainer.xcdatamodeld */; };
 		26D646751F12B54200BD8BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D646741F12B54200BD8BD9 /* Assets.xcassets */; };
 		26D646781F12B54200BD8BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D646761F12B54200BD8BD9 /* LaunchScreen.storyboard */; };
 		26D646831F12B54200BD8BD9 /* TechTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D646821F12B54200BD8BD9 /* TechTrainerTests.swift */; };
+		26D6468E1F12B6ED00BD8BD9 /* TechniqueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6468D1F12B6ED00BD8BD9 /* TechniqueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		268C4FD31F2828D3006B88BB /* AddCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechniqueCardCell.swift; sourceTree = "<group>"; };
 		26D646671F12B54200BD8BD9 /* TechTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D6466A1F12B54200BD8BD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26D6466C1F12B54200BD8BD9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		26D6466F1F12B54200BD8BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D646721F12B54200BD8BD9 /* TechTrainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TechTrainer.xcdatamodel; sourceTree = "<group>"; };
 		26D646741F12B54200BD8BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		26D6467E1F12B54200BD8BD9 /* TechTrainerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechTrainerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D646821F12B54200BD8BD9 /* TechTrainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTrainerTests.swift; sourceTree = "<group>"; };
 		26D646841F12B54200BD8BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26D6468D1F12B6ED00BD8BD9 /* TechniqueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechniqueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				26D6466A1F12B54200BD8BD9 /* AppDelegate.swift */,
-				26D6466C1F12B54200BD8BD9 /* ViewController.swift */,
+				26D6468D1F12B6ED00BD8BD9 /* TechniqueViewController.swift */,
+				26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */,
+				268C4FD31F2828D3006B88BB /* AddCardView.swift */,
 				26D6466E1F12B54200BD8BD9 /* Main.storyboard */,
 				26D646741F12B54200BD8BD9 /* Assets.xcassets */,
 				26D646761F12B54200BD8BD9 /* LaunchScreen.storyboard */,
@@ -204,9 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D6466D1F12B54200BD8BD9 /* ViewController.swift in Sources */,
 				26D6466B1F12B54200BD8BD9 /* AppDelegate.swift in Sources */,
 				26D646731F12B54200BD8BD9 /* TechTrainer.xcdatamodeld in Sources */,
+				26A821B21F1A95DF00C2ACA6 /* TechniqueCardCell.swift in Sources */,
+				26D6468E1F12B6ED00BD8BD9 /* TechniqueViewController.swift in Sources */,
+				268C4FD41F2828D3006B88BB /* AddCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +426,7 @@
 				26D646891F12B54200BD8BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26D6468A1F12B54200BD8BD9 /* Build configuration list for PBXNativeTarget "TechTrainerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +435,7 @@
 				26D6468C1F12B54200BD8BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
