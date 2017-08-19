@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26197A2F1F351FA20014A9FE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26197A2E1F351FA20014A9FE /* CoreDataStack.swift */; };
 		268C4FD41F2828D3006B88BB /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268C4FD31F2828D3006B88BB /* AddCardView.swift */; };
 		26A821B21F1A95DF00C2ACA6 /* TechniqueCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */; };
 		26D6466B1F12B54200BD8BD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D6466A1F12B54200BD8BD9 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26197A2E1F351FA20014A9FE /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		268C4FD31F2828D3006B88BB /* AddCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechniqueCardCell.swift; sourceTree = "<group>"; };
 		26D646671F12B54200BD8BD9 /* TechTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				26D6466A1F12B54200BD8BD9 /* AppDelegate.swift */,
+				26197A2E1F351FA20014A9FE /* CoreDataStack.swift */,
 				26D6468D1F12B6ED00BD8BD9 /* TechniqueViewController.swift */,
 				26A821B11F1A95DF00C2ACA6 /* TechniqueCardCell.swift */,
 				268C4FD31F2828D3006B88BB /* AddCardView.swift */,
@@ -213,6 +216,7 @@
 				26D6466B1F12B54200BD8BD9 /* AppDelegate.swift in Sources */,
 				26D646731F12B54200BD8BD9 /* TechTrainer.xcdatamodeld in Sources */,
 				26A821B21F1A95DF00C2ACA6 /* TechniqueCardCell.swift in Sources */,
+				26197A2F1F351FA20014A9FE /* CoreDataStack.swift in Sources */,
 				26D6468E1F12B6ED00BD8BD9 /* TechniqueViewController.swift in Sources */,
 				268C4FD41F2828D3006B88BB /* AddCardView.swift in Sources */,
 			);

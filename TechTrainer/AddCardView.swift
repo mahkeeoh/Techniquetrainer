@@ -27,6 +27,9 @@ class AddCardView: UIView {
     @IBAction func addPressed(_ sender: Any) {
         delegate?.addNewTask()
     }
+    
+
+    
 }
 
 protocol AddCardViewDelegate {

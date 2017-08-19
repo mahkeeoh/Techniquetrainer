@@ -12,7 +12,6 @@ class TechniqueCardCell: UICollectionViewCell {
     
     @IBOutlet weak var currentBPM: UILabel!
     @IBOutlet weak var techniqueName: UILabel!
-    @IBOutlet weak var lastLowBPM: UILabel!
-    @IBOutlet weak var lastHighBPM: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     
 }

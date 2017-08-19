@@ -24,27 +24,33 @@ class TechniqueViewController: UIViewController, AddCardViewDelegate {
     @IBOutlet weak var addCardConstraint: NSLayoutConstraint!
     
     // Core Data
-    var managedContext: NSManagedObjectContext? = nil
-    var entity: NSEntityDescription? = nil
+    var coreDataStack: CoreDataStack!
     
     
     override func viewDidLoad() {
-        
-        // Prepare CoreData
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        managedContext = appDelegate.persistentContainer.viewContext
     
-        entity =
-            NSEntityDescription.entity(forEntityName: "TechniqueCard",
-                                       in: managedContext!)!
-        
-
         collectionView.delegate = self
         collectionView.dataSource = self
         addCardView.delegate = self
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "TechniqueCard")
+        
+        do {
+            techniqueCards = try coreDataStack.mainContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        // Save this for deleting method
+//        for techniqueCard in techniqueCards {
+//            coreDataStack.mainContext.delete(techniqueCard)
+//        }
+//        do {
+//            try coreDataStack.mainContext.save()
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//        }
         
     }
     
@@ -54,11 +60,27 @@ class TechniqueViewController: UIViewController, AddCardViewDelegate {
 
         UIView.animate(withDuration: 1.0, animations: {
             
-            self.addCardConstraint.constant += 300
-            self.addCardView.addButton.setTitle("", for: .normal)
-            self.addCardView.cancelButton.setTitle("Cancel", for: .normal)
-            self.addCardView.addTaskButton.setTitle("Add", for: .normal)
-            self.view.layoutIfNeeded()
+            [unowned self] in
+        
+            if (self.addCardView.addButton.currentTitle == "") {
+                self.addCardConstraint.constant -= 300
+                self.addCardView.addButton.setTitle("+", for: .normal)
+                self.addCardView.cancelButton.setTitle("", for: .normal)
+                self.addCardView.addTaskButton.setTitle("", for: .normal)
+                self.view.layoutIfNeeded()
+                
+            }
+                
+            else {
+                self.addCardView.techniqueNameField.text = nil
+                self.addCardView.startingBPMField.text = nil
+                self.addCardView.descriptionField.text = nil
+                self.addCardConstraint.constant += 300
+                self.addCardView.addButton.setTitle("", for: .normal)
+                self.addCardView.cancelButton.setTitle("Cancel", for: .normal)
+                self.addCardView.addTaskButton.setTitle("Add", for: .normal)
+                self.view.layoutIfNeeded()
+            }
         })
     }
     
@@ -68,15 +90,20 @@ class TechniqueViewController: UIViewController, AddCardViewDelegate {
         let startBPM = Int(addCardView.startingBPMField.text!)!
         let description = addCardView.descriptionField.text
         
-        let card = NSManagedObject(entity: entity!,
-                                     insertInto: managedContext)
+        moveAddCardView()
+        
+       let entity = NSEntityDescription.entity(forEntityName: "TechniqueCard" ,
+           in: coreDataStack.mainContext)!
+        
+        let card = NSManagedObject(entity: entity,
+                                     insertInto: coreDataStack.mainContext)
         
         card.setValue(techName, forKey: "techniqueName")
         card.setValue(startBPM, forKey: "currentBPM")
         card.setValue(description, forKey: "techniqueDescription")
         
         do {
-            try managedContext?.save()
+            try coreDataStack.mainContext.save()
             techniqueCards.append(card)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
@@ -107,14 +134,13 @@ extension TechniqueViewController: UICollectionViewDataSource {
         
         // Configure the cell
         cell.backgroundColor = UIColor.blue
+        cell.layer.cornerRadius = 10.0
         
         let card = techniqueCards[indexPath.row]
         let numberCurrentBPM = card.value(forKeyPath: "currentBPM") as? NSNumber
         cell.currentBPM.text = numberCurrentBPM?.stringValue
         cell.techniqueName.text = card.value(forKeyPath: "techniqueName") as? String
-        cell.lastLowBPM.text = card.value(forKeyPath: "lastLowBPM") as? String
-        cell.lastHighBPM.text = card.value(forKeyPath: "lastHighBPM") as? String
-        
+
         return cell
     }
 }
